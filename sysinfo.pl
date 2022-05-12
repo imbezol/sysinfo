@@ -122,8 +122,8 @@ my $showDistro			= 1;
 ### Nothing below here should need changed. ###
 ###############################################
 
-my $sysinfoVer	= 'git 0.1';
-my $sysinfoDate	= 'May 12 2022, 12:26 MST';
+my $sysinfoVer	= 'git 0.1.1';
+my $sysinfoDate	= 'May 12 2022, 12:38 MST';
 
 my $os		= `uname -s`; chomp($os);
 my $osn		= `uname -n`; chomp($osn);
@@ -144,26 +144,26 @@ my $irix		= 1 if $os =~ /^IRIX$/;
 my $irix64		= 1 if $os =~ /^IRIX64$/;
 my $sun			= 1 if $os =~ /^SunOS$/;
 
-
-my $alpha		= 1 if $osm =~ /^alpha$/;
-my $arm			= 1 if $osm =~ /^arm$/;
-my $armv6l		= 1 if $osm =~ /^armv6l$/;
-my $armv7l		= 1 if $osm =~ /^armv7l$/;
-my $i586		= 1 if $osm =~ /^i586$/;
-my $i686		= 1 if $osm =~ /^i686$/;
-my $ia64		= 1 if $osm =~ /^ia64$/;
-my $mips		= 1 if $osm =~ /^mips$/;
-my $parisc		= 1 if $osm =~ /^parisc$/;
-my $parisc64		= 1 if $osm =~ /^parisc64$/;
-my $ppc			= 1 if $osm =~ /^ppc$/;
-my $ppc64		= 1 if $osm =~ /^ppc64$/;
-my $s390		= 1 if $osm =~ /^s390$/;
-my $s390x		= 1 if $osm=~ /^s390x$/;
-my $sh			= 1 if $osm=~ /^sh/;
-my $sparc		= 1 if $osm =~ /^sparc$/;
-my $sparc64		= 1 if $osm =~ /^sparc64$/;
-my $x86_64		= 1 if $osm =~ /^x86_64$/;
-my $amd64		= 1 if $osm =~ /^amd64$/;
+my $alpha               = 1 if $osm =~ /^alpha$/;
+my $amd64               = 1 if $osm =~ /^amd64$/;
+my $arm                 = 1 if $osm =~ /^arm$/;
+my $armv6l              = 1 if $osm =~ /^armv6l$/;
+my $armv7l              = 1 if $osm =~ /^armv7l$/;
+my $aarch64             = 1 if $osm =~ /^aarch64$/;
+my $i586                = 1 if $osm =~ /^i586$/;
+my $i686                = 1 if $osm =~ /^i686$/;
+my $ia64                = 1 if $osm =~ /^ia64$/;
+my $mips                = 1 if $osm =~ /^mips$/;
+my $parisc              = 1 if $osm =~ /^parisc$/;
+my $parisc64            = 1 if $osm =~ /^parisc64$/;
+my $ppc                 = 1 if $osm =~ /^ppc$/;
+my $ppc64               = 1 if $osm =~ /^ppc64$/;
+my $s390                = 1 if $osm =~ /^s390$/;
+my $s390x               = 1 if $osm=~ /^s390x$/;
+my $sh                  = 1 if $osm=~ /^sh/;
+my $sparc               = 1 if $osm =~ /^sparc$/;
+my $sparc64             = 1 if $osm =~ /^sparc64$/;
+my $x86_64              = 1 if $osm =~ /^x86_64$/;
 
 my $d7		= 1 if $darwin && $osv =~ /^7\.\d+\.\d+/;
 my $d8		= 1 if $darwin && $osv =~ /^8\.\d+\.\d+/;
@@ -196,7 +196,7 @@ if($linux) {
 		@distros = (
 		"Arch",			"/etc/arch-release",
 		"Gentoo",		"/etc/gentoo-release",
-		"Fedora Core",		"/etc/fedora-release",
+		"Fedora",		"/etc/fedora-release",
 		"SUSE",			"/etc/SuSE-release",
 		"Slackware",		"/etc/slackware-version",
 		"Cobalt",		"/etc/cobalt-release",
@@ -399,7 +399,7 @@ if($showCPU) {
 		if($arm) {
 			$cpu		= &cpuinfo("Processor\\s+: ");
 		}
-		if ($armv6l || $armv7l) {
+		if ($armv6l || $armv7l || $aarch64) {
 			$cpu		= &cpuinfo("model name\\s+: ");
 			$cpu		=~ s/-compatible//;
 			$cpu		=~ s/processor //;
