@@ -144,12 +144,12 @@ my $irix		= 1 if $os =~ /^IRIX$/;
 my $irix64		= 1 if $os =~ /^IRIX64$/;
 my $sun			= 1 if $os =~ /^SunOS$/;
 
-my $aarch64             = 1 if $osm =~ /^aarch64$/;
 my $alpha               = 1 if $osm =~ /^alpha$/;
 my $amd64               = 1 if $osm =~ /^amd64$/;
 my $arm                 = 1 if $osm =~ /^arm$/;
 my $armv6l              = 1 if $osm =~ /^armv6l$/;
 my $armv7l              = 1 if $osm =~ /^armv7l$/;
+my $aarch64             = 1 if $osm =~ /^aarch64$/;
 my $i586                = 1 if $osm =~ /^i586$/;
 my $i686                = 1 if $osm =~ /^i686$/;
 my $ia64                = 1 if $osm =~ /^ia64$/;
