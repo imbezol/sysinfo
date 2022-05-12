@@ -122,8 +122,8 @@ my $showDistro			= 1;
 ### Nothing below here should need changed. ###
 ###############################################
 
-my $sysinfoVer	= 'concise 0.3';
-my $sysinfoDate	= 'Apr 10 2020, 11:48 MST';
+my $sysinfoVer	= 'git 0.1';
+my $sysinfoDate	= 'May 12 2022, 12:26 MST';
 
 my $os		= `uname -s`; chomp($os);
 my $osn		= `uname -n`; chomp($osn);
