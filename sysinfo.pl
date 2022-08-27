@@ -416,7 +416,7 @@ if($showCPU) {
 		if($i686 || $i586 || $x86_64) {
 			$cpu		= &cpuinfo("model name\\s+: ");
 			$cpu		=~ s/(.+) CPU family\t+\d+MHz/$1/g;
-			$cpu		=~ s/(.+) CPU .+GHz/$1/g;
+			$cpu		=~ s/ CPU / /g;
 			$mhz		= &cpuinfo("cpu MHz\\s+: ");
 			$mhz		=~ s/^\s*//g;
 			$mhz		= sprintf("%.0f", $mhz);
