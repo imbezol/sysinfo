@@ -260,6 +260,8 @@ if($linux) {
 			$realdistro = `cat /etc/redhat-release`;
 			if ($realdistro =~ "^CentOS") {
 				$distro = "CentOS";
+			} elsif ($realdistro =~ "^Red Hat Enterprise Linux CoreOS") {
+				$distro = "RHEL CoreOS";
 			}
 		}
 		if ($distro eq "SUSE") {
