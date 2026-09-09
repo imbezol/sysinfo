@@ -122,8 +122,8 @@ my $showDistro			= 1;
 ### Nothing below here should need changed. ###
 ###############################################
 
-my $sysinfoVer	= 'git 0.1.1';
-my $sysinfoDate	= 'May 12 2022, 12:38 MST';
+my $sysinfoVer	= 'git 0.1.2';
+my $sysinfoDate	= 'Sep 9 2026, 12:43 MST';
 
 my $os		= `uname -s`; chomp($os);
 my $osn		= `uname -n`; chomp($osn);
@@ -169,7 +169,7 @@ my $d7		= 1 if $darwin && $osv =~ /^7\.\d+\.\d+/;
 my $d8		= 1 if $darwin && $osv =~ /^8\.\d+\.\d+/;
 my $d9		= 1 if $darwin && $osv =~ /^9\.\d+\.\d+/;
 my $l26		= 1 if $linux && $osv =~ /^2\.6/;
-my $l3		= 1 if $linux && $osv =~ /^2\.7/  || $osv =~ /^[3456]\./;
+my $l3		= 1 if $linux && $osv =~ /^2\.7/  || $osv =~ /^[34567]\./;
 my $f_old	= 1 if $freebsd && $osv =~ /^4\.1-/ || $osv =~ /^4\.0-/ || $osv =~ /^3/ || $osv =~ /^2/;
 
 my $isJail = `sysctl -n security.jail.jailed` if $freebsd;
